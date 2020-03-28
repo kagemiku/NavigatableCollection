@@ -27,12 +27,10 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     private let cell: (DataSource.Element) -> Cell
 
     public var body: some View {
-        List {
-            ForEach(rows) { row in
-                HStack {
-                    ForEach(row.columnDataList) { columnData in
-                        self.cell(columnData)
-                    }
+        GeometryReader { geometry in
+            List {
+                ForEach(self.rows) { row in
+                    self.rowContent(row, geometry: geometry)
                 }
             }
         }
@@ -49,4 +47,20 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
         self.config = config
         self.cell = cell
     }
+
+    private func rowContent(_ row: RowData, geometry: GeometryProxy) -> some View {
+        return HStack {
+            ForEach(row.columnDataList) { columnData in
+                self.cell(columnData)
+                    .frame(width: self.cellWidth(geometry))
+            }
+        }
+    }
+
+    private func cellWidth(_ geometry: GeometryProxy) -> CGFloat {
+        let width = geometry.size.width
+
+        return width / CGFloat(config.columns)
+    }
+
 }
