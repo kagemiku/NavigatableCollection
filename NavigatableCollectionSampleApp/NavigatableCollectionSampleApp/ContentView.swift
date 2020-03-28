@@ -7,10 +7,20 @@
 //
 
 import SwiftUI
+import NavigatableCollection
 
 struct ContentView: View {
+
+    struct User: Identifiable {
+        let id: Int
+    }
+
+    private let dataSoruce: [User] = (0..<10).map { User(id: $0) }
+
     var body: some View {
-        Text("Hello, World!")
+        NavigatableCollectionView(dataSource: dataSoruce) { user in
+            Text("\(user.id)")
+        }
     }
 }
 
