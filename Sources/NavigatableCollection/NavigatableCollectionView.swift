@@ -24,7 +24,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
         }
     }
 
-    public init(dataSource: DataSource, cell: @escaping (DataSource.Element) -> Cell) {
+    public init(dataSource: DataSource, @ViewBuilder cell: @escaping (DataSource.Element) -> Cell) {
         self.dataSource = dataSource.map { $0 }
         self.cell = cell
     }
