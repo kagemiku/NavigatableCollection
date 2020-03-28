@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		1045FAB9242F453B00416B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1045FAB7242F453B00416B90 /* LaunchScreen.storyboard */; };
 		1045FAC4242F453B00416B90 /* NavigatableCollectionSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAC3242F453B00416B90 /* NavigatableCollectionSampleAppTests.swift */; };
 		1045FACF242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FACE242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift */; };
+		1045FADF242F45A900416B90 /* NavigatableCollection in Frameworks */ = {isa = PBXBuildFile; productRef = 1045FADE242F45A900416B90 /* NavigatableCollection */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1045FACA242F453B00416B90 /* NavigatableCollectionSampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigatableCollectionSampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1045FACE242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatableCollectionSampleAppUITests.swift; sourceTree = "<group>"; };
 		1045FAD0242F453B00416B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1045FADC242F45A000416B90 /* NavigatableCollection */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NavigatableCollection; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1045FADF242F45A900416B90 /* NavigatableCollection in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +82,12 @@
 		1045FAA0242F453900416B90 = {
 			isa = PBXGroup;
 			children = (
+				1045FADC242F45A000416B90 /* NavigatableCollection */,
 				1045FAAB242F453900416B90 /* NavigatableCollectionSampleApp */,
 				1045FAC2242F453B00416B90 /* NavigatableCollectionSampleAppTests */,
 				1045FACD242F453B00416B90 /* NavigatableCollectionSampleAppUITests */,
 				1045FAAA242F453900416B90 /* Products */,
+				1045FADD242F45A900416B90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +141,13 @@
 			path = NavigatableCollectionSampleAppUITests;
 			sourceTree = "<group>";
 		};
+		1045FADD242F45A900416B90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +164,9 @@
 			dependencies = (
 			);
 			name = NavigatableCollectionSampleApp;
+			packageProductDependencies = (
+				1045FADE242F45A900416B90 /* NavigatableCollection */,
+			);
 			productName = NavigatableCollectionSampleApp;
 			productReference = 1045FAA9242F453900416B90 /* NavigatableCollectionSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -588,6 +603,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1045FADE242F45A900416B90 /* NavigatableCollection */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NavigatableCollection;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1045FAA1242F453900416B90 /* Project object */;
 }
