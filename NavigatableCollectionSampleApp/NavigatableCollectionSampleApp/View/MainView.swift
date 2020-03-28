@@ -16,10 +16,11 @@ struct MainView: View {
     }
 
     private let dataSoruce: [User] = (0..<10).map { User(id: $0) }
+    private let config = NavigatableCollectionViewConfig(columns: 3)
 
     var body: some View {
         NavigationView {
-            NavigatableCollectionView(dataSource: dataSoruce) { user in
+            NavigatableCollectionView(dataSource: dataSoruce, config: config) { user in
                 NavigatableCollectionViewCell(destination: DetailView(id: user.id)) {
                     Text("\(user.id)")
                 }
