@@ -16,6 +16,7 @@
 		1045FAC4242F453B00416B90 /* NavigatableCollectionSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAC3242F453B00416B90 /* NavigatableCollectionSampleAppTests.swift */; };
 		1045FACF242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FACE242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift */; };
 		1045FADF242F45A900416B90 /* NavigatableCollection in Frameworks */ = {isa = PBXBuildFile; productRef = 1045FADE242F45A900416B90 /* NavigatableCollection */; };
+		1045FAE6242F514800416B90 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAE5242F514800416B90 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1045FACE242F453B00416B90 /* NavigatableCollectionSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatableCollectionSampleAppUITests.swift; sourceTree = "<group>"; };
 		1045FAD0242F453B00416B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1045FADC242F45A000416B90 /* NavigatableCollection */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NavigatableCollection; path = ..; sourceTree = "<group>"; };
+		1045FAE5242F514800416B90 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				1045FAB0242F453900416B90 /* MainView.swift */,
+				1045FAE5242F514800416B90 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1045FAAD242F453900416B90 /* AppDelegate.swift in Sources */,
+				1045FAE6242F514800416B90 /* DetailView.swift in Sources */,
 				1045FAAF242F453900416B90 /* SceneDelegate.swift in Sources */,
 				1045FAB1242F453900416B90 /* MainView.swift in Sources */,
 			);
