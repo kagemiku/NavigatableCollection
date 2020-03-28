@@ -7,17 +7,25 @@
 
 import SwiftUI
 
-public struct NavigatableCollectionView: View {
+public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource: RandomAccessCollection, DataSource.Element: Identifiable, Cell: View {
+
+    private let dataSource: [DataSource.Element]
+    private let cell: (DataSource.Element) -> Cell
 
     public var body: some View {
-        Text("Hello, World!")
+        List {
+            ForEach(dataSource) { data in
+                HStack {
+                    ForEach(0..<3) { _ in
+                        self.cell(data)
+                    }
+                }
+            }
+        }
     }
 
-    public init() { }
-}
-
-struct NavigatableCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigatableCollectionView()
+    public init(dataSource: DataSource, cell: @escaping (DataSource.Element) -> Cell) {
+        self.dataSource = dataSource.map { $0 }
+        self.cell = cell
     }
 }
