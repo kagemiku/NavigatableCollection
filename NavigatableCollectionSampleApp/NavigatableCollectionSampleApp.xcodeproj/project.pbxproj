@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1045FAAD242F453900416B90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAAC242F453900416B90 /* AppDelegate.swift */; };
 		1045FAAF242F453900416B90 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAAE242F453900416B90 /* SceneDelegate.swift */; };
-		1045FAB1242F453900416B90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAB0242F453900416B90 /* ContentView.swift */; };
+		1045FAB1242F453900416B90 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1045FAB0242F453900416B90 /* MainView.swift */; };
 		1045FAB3242F453B00416B90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1045FAB2242F453B00416B90 /* Assets.xcassets */; };
 		1045FAB6242F453B00416B90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1045FAB5242F453B00416B90 /* Preview Assets.xcassets */; };
 		1045FAB9242F453B00416B90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1045FAB7242F453B00416B90 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		1045FAA9242F453900416B90 /* NavigatableCollectionSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigatableCollectionSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1045FAAC242F453900416B90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1045FAAE242F453900416B90 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1045FAB0242F453900416B90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1045FAB0242F453900416B90 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		1045FAB2242F453B00416B90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1045FAB5242F453B00416B90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1045FAB8242F453B00416B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 			children = (
 				1045FAAC242F453900416B90 /* AppDelegate.swift */,
 				1045FAAE242F453900416B90 /* SceneDelegate.swift */,
-				1045FAB0242F453900416B90 /* ContentView.swift */,
+				1045FAE4242F50C100416B90 /* View */,
 				1045FAB2242F453B00416B90 /* Assets.xcassets */,
 				1045FAB7242F453B00416B90 /* LaunchScreen.storyboard */,
 				1045FABA242F453B00416B90 /* Info.plist */,
@@ -146,6 +146,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1045FAE4242F50C100416B90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1045FAB0242F453900416B90 /* MainView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +292,7 @@
 			files = (
 				1045FAAD242F453900416B90 /* AppDelegate.swift in Sources */,
 				1045FAAF242F453900416B90 /* SceneDelegate.swift in Sources */,
-				1045FAB1242F453900416B90 /* ContentView.swift in Sources */,
+				1045FAB1242F453900416B90 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

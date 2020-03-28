@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  NavigatableCollectionSampleApp
 //
 //  Created by kagemiku on 2020/03/28.
@@ -9,7 +9,7 @@
 import SwiftUI
 import NavigatableCollection
 
-struct ContentView: View {
+struct MainView: View {
 
     struct User: Identifiable {
         let id: Int
@@ -24,8 +24,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
