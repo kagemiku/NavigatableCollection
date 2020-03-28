@@ -12,14 +12,14 @@ public struct NavigatableCollectionViewCell<Label, Destination>: View where Labe
     @State private var navigationActive = false
 
     private let destination: Destination
-    private let label: Label
+    private let label: () -> Label
 
     public var body: some View {
         Group {
             Button(action: {
                 self.navigationActive = true
             }) {
-                label
+                label()
             }
             .buttonStyle(PlainButtonStyle())
 
@@ -31,9 +31,9 @@ public struct NavigatableCollectionViewCell<Label, Destination>: View where Labe
         }
     }
 
-    public init(destination: Destination, @ViewBuilder label: () -> Label) {
+    public init(destination: Destination, @ViewBuilder label: @escaping () -> Label) {
         self.destination = destination
-        self.label = label()
+        self.label = label
     }
 
 }
