@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+public struct NavigatableCollectionViewConfig {
+    public let columns: Int
+
+    public init(columns: Int) {
+        self.columns = columns
+    }
+}
+
 public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource: RandomAccessCollection, DataSource.Element: Identifiable, Cell: View {
 
     private let dataSource: [DataSource.Element]
+    private let config: NavigatableCollectionViewConfig
     private let cell: (DataSource.Element) -> Cell
 
     public var body: some View {
@@ -25,7 +34,9 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     }
 
     public init(dataSource: DataSource, @ViewBuilder cell: @escaping (DataSource.Element) -> Cell) {
+    public init(dataSource: DataSource, config: NavigatableCollectionViewConfig, @ViewBuilder cell: @escaping (DataSource.Element) -> Cell) {
         self.dataSource = dataSource.map { $0 }
+        self.config = config
         self.cell = cell
     }
 }
