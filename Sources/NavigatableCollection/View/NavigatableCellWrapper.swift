@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A wrapper view that navigate to another view when tapped
 public struct NavigatableCellWrapper<Label, Destination>: View where Label: View, Destination: View {
 
     @State private var navigationActive = false
@@ -31,6 +32,7 @@ public struct NavigatableCellWrapper<Label, Destination>: View where Label: View
         }
     }
 
+    /// Creates an instance that presents `destination`
     public init(destination: Destination, @ViewBuilder label: @escaping () -> Label) {
         self.destination = destination
         self.label = label
