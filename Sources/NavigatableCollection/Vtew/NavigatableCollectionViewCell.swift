@@ -15,7 +15,7 @@ public struct NavigatableCollectionViewCell<Label, Destination>: View where Labe
     private let label: () -> Label
 
     public var body: some View {
-        Group {
+        ZStack {
             Button(action: {
                 self.navigationActive = true
             }) {
