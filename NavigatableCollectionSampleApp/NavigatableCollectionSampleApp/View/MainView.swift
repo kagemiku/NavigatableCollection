@@ -29,6 +29,7 @@ struct MainView: View {
                     CellView(id: user.id)
                 }
             }
+            .navigationBarTitle("Sample App")
         }
     }
 }
