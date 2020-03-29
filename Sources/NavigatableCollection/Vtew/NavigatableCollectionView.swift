@@ -9,9 +9,13 @@ import SwiftUI
 
 public struct NavigatableCollectionViewConfig {
     public let columns: Int
+    public let hSpacing: CGFloat
+    public let rowInsets: EdgeInsets
 
-    public init(columns: Int) {
+    public init(columns: Int, hSpacing: CGFloat = 0, rowInsets: EdgeInsets = .init()) {
         self.columns = columns
+        self.hSpacing = hSpacing
+        self.rowInsets = rowInsets
     }
 }
 
@@ -34,6 +38,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
                 ForEach(self.rows) { row in
                     self.rowContent(row, geometry: geometry)
                 }
+                .listRowInsets(self.config.rowInsets)
             }
         }
         .onAppear {
@@ -58,7 +63,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     }
 
     private func rowContent(_ row: RowData, geometry: GeometryProxy) -> some View {
-        return HStack {
+        return HStack(spacing: config.hSpacing) {
             ForEach(row.columnDataList) { columnData in
                 self.cell(columnData)
                     .frame(width: self.cellWidth(geometry))
@@ -67,7 +72,9 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     }
 
     private func cellWidth(_ geometry: GeometryProxy) -> CGFloat {
-        let width = geometry.size.width
+        let totalSpacing = config.hSpacing * CGFloat(config.columns - 1)
+        let totalInsets = config.rowInsets.leading + config.rowInsets.trailing
+        let width = geometry.size.width - totalSpacing - totalInsets
 
         return width / CGFloat(config.columns)
     }
