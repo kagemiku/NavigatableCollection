@@ -36,14 +36,13 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     private let dataSource: [DataSource.Element]
     private let config: NavigatableCollectionViewConfig
     private let cell: (DataSource.Element) -> Cell
-
     private let oldSeparatorStyle: UITableViewCell.SeparatorStyle
 
     public var body: some View {
         GeometryReader { geometry in
             List {
                 ForEach(self.rows) { row in
-                    self.rowContent(row, geometry: geometry)
+                    self.rowContent(for: row, geometry: geometry)
                 }
                 .listRowInsets(self.config.rowInsets)
             }
@@ -70,7 +69,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
         self.oldSeparatorStyle = UITableView.appearance().separatorStyle
     }
 
-    private func rowContent(_ row: RowData, geometry: GeometryProxy) -> some View {
+    private func rowContent(for row: RowData, geometry: GeometryProxy) -> some View {
         return HStack(spacing: config.hSpacing) {
             ForEach(row.columnDataList) { columnData in
                 self.cell(columnData)
