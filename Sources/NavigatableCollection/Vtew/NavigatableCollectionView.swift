@@ -26,6 +26,8 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
     private let config: NavigatableCollectionViewConfig
     private let cell: (DataSource.Element) -> Cell
 
+    private let oldSeparatorStyle: UITableViewCell.SeparatorStyle
+
     public var body: some View {
         GeometryReader { geometry in
             List {
@@ -33,6 +35,12 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
                     self.rowContent(row, geometry: geometry)
                 }
             }
+        }
+        .onAppear {
+            UITableView.appearance().separatorStyle = .none
+        }
+        .onDisappear {
+            UITableView.appearance().separatorStyle = self.oldSeparatorStyle
         }
     }
 
@@ -46,6 +54,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
         self.dataSource = dataSource.map { $0 }
         self.config = config
         self.cell = cell
+        self.oldSeparatorStyle = UITableView.appearance().separatorStyle
     }
 
     private func rowContent(_ row: RowData, geometry: GeometryProxy) -> some View {
