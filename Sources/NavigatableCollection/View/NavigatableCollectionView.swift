@@ -7,11 +7,17 @@
 
 import SwiftUI
 
+/// A configuration for NavigatableCollectionView
 public struct NavigatableCollectionViewConfig {
     public let columns: Int
     public let hSpacing: CGFloat
     public let rowInsets: EdgeInsets
 
+    /// Creates an instance
+    /// - Parameters:
+    ///   - columns: The number of columns for rows
+    ///   - hSpacing: The horizontal space between cells
+    ///   - rowInsets: The EdgeInsets for rows
     public init(columns: Int, hSpacing: CGFloat = 0, rowInsets: EdgeInsets = .init()) {
         self.columns = columns
         self.hSpacing = hSpacing
@@ -19,6 +25,7 @@ public struct NavigatableCollectionViewConfig {
     }
 }
 
+/// A container that manages an ordered collection of data items and presents them.
 public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource: RandomAccessCollection, DataSource.Element: Identifiable, Cell: View {
 
     private struct RowData: Identifiable {
@@ -55,6 +62,7 @@ public struct NavigatableCollectionView<DataSource, Cell>: View where DataSource
             .map { .init(id: $0.first!.id, columnDataList: $0) }
     }
 
+    /// Creates an instance that computes its cells on demand from an underlying collection of identified data.
     public init(dataSource: DataSource, config: NavigatableCollectionViewConfig, @ViewBuilder cell: @escaping (DataSource.Element) -> Cell) {
         self.dataSource = dataSource.map { $0 }
         self.config = config
