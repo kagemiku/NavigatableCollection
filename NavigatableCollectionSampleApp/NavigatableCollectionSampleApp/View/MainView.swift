@@ -22,7 +22,7 @@ struct MainView: View {
         NavigationView {
             NavigatableCollectionView(dataSource: dataSoruce, config: config) { user in
                 NavigatableCollectionViewCell(destination: DetailView(id: user.id)) {
-                    Text("\(user.id)")
+                    CellView(id: user.id)
                 }
             }
         }

@@ -13,7 +13,13 @@ struct DetailView: View {
     private let id: Int
 
     var body: some View {
-        Text("ID: \(id)")
+        VStack {
+            Image("dummy_cell_image")
+                .resizable()
+                .scaledToFit()
+
+            Text("ID: \(id)")
+        }
     }
 
     init(id: Int) {
