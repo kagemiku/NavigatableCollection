@@ -15,8 +15,12 @@ struct MainView: View {
         let id: Int
     }
 
-    private let dataSoruce: [User] = (0..<10).map { User(id: $0) }
-    private let config = NavigatableCollectionViewConfig(columns: 3)
+    private let dataSoruce: [User] = (0..<50).map { User(id: $0) }
+    private let config = NavigatableCollectionViewConfig(
+        columns: 3,
+        hSpacing: 5.0,
+        rowInsets: .init(top: 0, leading: 5, bottom: 5, trailing: 5)
+    )
 
     var body: some View {
         NavigationView {
