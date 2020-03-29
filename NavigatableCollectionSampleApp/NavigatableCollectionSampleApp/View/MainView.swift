@@ -21,7 +21,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             NavigatableCollectionView(dataSource: dataSoruce, config: config) { user in
-                NavigatableCollectionViewCell(destination: DetailView(id: user.id)) {
+                NavigatableCellWrapper(destination: DetailView(id: user.id)) {
                     CellView(id: user.id)
                 }
             }

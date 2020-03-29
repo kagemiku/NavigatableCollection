@@ -1,5 +1,5 @@
 //
-//  NavigatableCollectionViewCell.swift
+//  NavigatableCellWrapper.swift
 //  NavigatableCollection
 //
 //  Created by kagemiku on 2020/03/28.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct NavigatableCollectionViewCell<Label, Destination>: View where Label: View, Destination: View {
+public struct NavigatableCellWrapper<Label, Destination>: View where Label: View, Destination: View {
 
     @State private var navigationActive = false
 
