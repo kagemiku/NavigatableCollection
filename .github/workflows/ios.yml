@@ -13,7 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: xcodebuild test
+    - name: Select Xcode version
+      run: sudo xcode-select --switch /Applications/Xcode_11.4_beta.app
+    - name: Show selected Xcode version
+      run: xcodebuild -version
+    - name: Run xcodebuild test
       run: |
         set -o pipefail
         xcodebuild clean test -project NavigatableCollectionSampleApp/NavigatableCollectionSampleApp.xcodeproj -scheme NavigatableCollectionSampleApp -destination "platform=iOS Simulator,name=iPhone 11" | xcpretty
