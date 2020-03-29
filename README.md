@@ -1,4 +1,6 @@
 # NavigatableCollection
+![](https://github.com/kagemiku/NavigatableCollection/workflows/iOS/badge.svg)
+
 **It's better to use `UICollectionView` with `UIViewControllerRepresentable`**
 
 `NavigatableCollection` is an UI library for showing collection view which is missed in SwiftUI.
